@@ -3,15 +3,16 @@
     <title>
         Address page
     </title>
+    <link rel="stylesheet" th:href="@{/login.css}">
 </head>
 <body>
 <center>
     <form method="post">
-        <h1 th:text="${add}"></h1>
-        <input type="text" name="location" placeholder="Address"/>
+        <input type="text" name="location" placeholder="Address" />
         <br/>
-        <button type="submit">submit</button>
+        <button type="submit">getLocation</button>
     </form>
+    <h1 th:text="${address}"></h1>
 </center>
 </body>
 </html>

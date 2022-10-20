@@ -2,7 +2,6 @@ package com.example.demo.Controller;
 
 
 import com.example.demo.Service.ValidateService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +17,7 @@ public class HomeController {
     @RequestMapping(value="/index", method = RequestMethod.POST)
     public String llo(@RequestParam String userid, @RequestParam("password") String password, Model model){
         if(validateService.isValidUser(userid, password))
-            return "welcome";
+            return "redirect:/address";
         model.addAttribute("msg", "Invalid credentials");
         return "index";
     }
